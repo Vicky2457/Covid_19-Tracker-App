@@ -5,14 +5,14 @@ services:
     staticPublishPath: build/web
     buildCommand: |
       # Install Flutter
-      git clone https://github.com/flutter/flutter.git
+      git clone https://github.com/flutter/flutter.git -b stable --depth 1
       export PATH="$PATH:`pwd`/flutter/bin"
+      
+      # Check that Flutter is installed
       flutter doctor
       
-      # Enable Flutter web
-      flutter channel stable
-      flutter upgrade
+      # Enable Flutter web support
       flutter config --enable-web
       
-      # Build the web app
+      # Build the Flutter web project
       flutter build web
