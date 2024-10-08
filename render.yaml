@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: flutter-web
+    env: static
+    staticPublishPath: build/web
+    buildCommand: |
+      # Install Flutter
+      git clone https://github.com/flutter/flutter.git
+      export PATH="$PATH:`pwd`/flutter/bin"
+      flutter doctor
+      
+      # Enable Flutter web
+      flutter channel stable
+      flutter upgrade
+      flutter config --enable-web
+      
+      # Build the web app
+      flutter build web

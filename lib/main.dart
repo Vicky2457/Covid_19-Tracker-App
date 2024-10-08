@@ -1,6 +1,5 @@
 import 'package:covid_19/covid_19_Api/view/splash.dart';
 import 'package:flutter/material.dart';
-import 'package:covid_19/covid_19_Api/view/countries_list.dart';
 
 void main() {
   runApp(const FlutterApp());
